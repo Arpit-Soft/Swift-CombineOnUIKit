@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CombineOnUIkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9di-mw-eD4">
+                                <rect key="frame" x="83.5" y="126" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iT9-7l-7ew">
+                                <rect key="frame" x="256.5" y="121" width="51" height="31"/>
+                                <connections>
+                                    <action selector="didSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="vsn-Fd-jR0"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhk-YY-lhI">
+                                <rect key="frame" x="139" y="207" width="136" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Send Message"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfx-nz-8cN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-mm-Zjl">
+                                <rect key="frame" x="156" y="309" width="102.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ln3-mm-Zjl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22d-SI-DpJ"/>
+                            <constraint firstItem="iT9-7l-7ew" firstAttribute="leading" secondItem="9di-mw-eD4" secondAttribute="trailing" constant="50" id="8nA-ZS-mt5"/>
+                            <constraint firstItem="9di-mw-eD4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="KQy-fK-u3y"/>
+                            <constraint firstItem="9di-mw-eD4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.7" id="LMt-Yp-kkV"/>
+                            <constraint firstItem="ln3-mm-Zjl" firstAttribute="top" secondItem="Uhk-YY-lhI" secondAttribute="bottom" constant="64" id="M2b-Uy-qkS"/>
+                            <constraint firstItem="iT9-7l-7ew" firstAttribute="centerY" secondItem="9di-mw-eD4" secondAttribute="centerY" id="RfT-oB-AAa"/>
+                            <constraint firstItem="Uhk-YY-lhI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c2l-bG-1R4"/>
+                            <constraint firstItem="Uhk-YY-lhI" firstAttribute="top" secondItem="iT9-7l-7ew" secondAttribute="bottom" constant="55" id="hGb-ct-4yb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allowSwitch" destination="iT9-7l-7ew" id="cM9-oN-9HK"/>
+                        <outlet property="messageLabel" destination="ln3-mm-Zjl" id="ysK-F9-oRn"/>
+                        <outlet property="sendMessageButton" destination="Uhk-YY-lhI" id="Q42-DW-HG4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
